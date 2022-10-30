@@ -7,17 +7,18 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        h1 = headA
-        h2 = headB
-
-        while h1 != h2:
-            if not h1:
-                h1 = headB
+        p1, p2 = headA, headB
+        count = 0
+        while count < 3:
+            if p1 is p2:
+                return p1
+            if p1 and p1.next:
+                p1 = p1.next
             else:
-                h1 = h1.next
-
-            if not h2:
-                h2 = headA
+                count += 1
+                p1 = headB
+            if p2 and p2.next:
+                p2 = p2.next
             else:
-                h2 = h2.next
-        return h1
+                count += 1
+                p2 = headA

@@ -6,7 +6,7 @@ class Solution:
             result = 0
             for x in str(n):
                 visited.add(int(x))
-                result += intA(x) * int(x)
+                result += int(x) * int(x)
             
             if result == 1:
                 return True

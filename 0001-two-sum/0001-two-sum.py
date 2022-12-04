@@ -5,4 +5,4 @@ class Solution:
             if nums[i] in hash_table:
                 return [hash_table[nums[i]], i]
             else:
-                hash_table[target - nums[i]] = i
+                hash_table[target-nums[i]] = i
